@@ -1,2 +1,2 @@
 # vue-cnode
-vue 仿cnode社区
+vue 全家桶 仿cnode社区
