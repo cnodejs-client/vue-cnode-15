@@ -1,2 +1,2 @@
 # vue-cnnode
-vue 仿cnnode社区
+vue 仿cnode社区
