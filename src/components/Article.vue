@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="loading" v-if="isLoading"></div>
-        <div class="post_content" v-else>
+        <div class="post_content" v-else id="content">
             <div class="header">
                 <div class="title">{{post.title}}</div>
                 <ul>
@@ -81,6 +81,7 @@ export default {
     @import url('../assets/markdown-github.css');
     .post_content {
         border-radius: 6px;
+        margin-right:305px;
         
         > .header {
             border-bottom: 2px solid #E5E5E5;

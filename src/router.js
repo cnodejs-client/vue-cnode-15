@@ -21,7 +21,7 @@ export default new Router({
             path:'/topic/:id&author=:name',
             components:{
                 main:Article,
-                // sidebar:Sidebar
+                sidebar:Sidebar
             }
         },
         {
