@@ -2,7 +2,7 @@
     <div id="app">
         <top-header></top-header>
         <div class="main">
-            <router-view name="slidebar"></router-view>
+            <router-view name="sidebar"></router-view>
             <router-view name="main"></router-view>
         </div>
     </div>

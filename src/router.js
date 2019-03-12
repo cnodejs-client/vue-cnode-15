@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import PostList from './components/PostList'
 import Article from './components/Article'
 import UserInfo from './components/Userinfo'
-import SideBar from './components/Sidebar'
+import Sidebar from './components/Sidebar'
 import Login from './components/Login'
 Vue.use(Router);
 
@@ -20,8 +20,8 @@ export default new Router({
             name:'post_count',
             path:'/topic/:id&author=:name',
             components:{
-                name:Article,
-                sidebar:SideBar
+                main:Article,
+                // sidebar:Sidebar
             }
         },
         {
