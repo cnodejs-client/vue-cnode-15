@@ -2,43 +2,45 @@
     <div>
         <div class="loading" v-if="isLoading"></div>
         <div class="post_content" v-else id="content">
-            <div class="header">
-                <div class="title">{{post.title}}</div>
-                <ul>
-                    <li>• 发布于{{post.create_at | forTimeDate}}&nbsp;</li>
-                    <li>• 作者
-                        <router-link :to="{
-                            name:'user_info',
-                            params:{
-                                name:post.author.loginname
-                            }
-                        }">
-                            {{post.author.loginname}}&nbsp;
-                        </router-link> 
-                    </li>
-                    <li>• {{post.visit_count}}次浏览&nbsp;</li>
-                    <li>• 来自&nbsp;{{post | tabFormatter}}</li>
-                </ul>
-            </div>
-            <div class="content">
-                <div v-html="post.content"></div>
-            </div>
-            <div class="reply-wrapper" v-if="post.replies.length > 0 ">
-                <div class="num">{{post.replies.length}} 回复</div>
-                <div v-for="(reply,index) in post.replies" class="reply">
-                    <div class="user-wrapper">
-                        <router-link :to="{
-                            name:'user_info',
-                            params:{
-                                name:'reply.author.loginname'
-                            }
-                        }">
-                            <img :src="reply.author.avatar_url" alt="">
-                        </router-link>
-                        <span class="name">{{reply.author.loginname}}</span>
-                        <span class="time">{{index+1}}楼• {{reply.create_at | forTimeDate}}</span>
+            <div class="panel">
+                <div class="header">
+                    <div class="title">{{post.title}}</div>
+                    <ul>
+                        <li>• 发布于{{post.create_at | forTimeDate}}&nbsp;</li>
+                        <li>• 作者
+                            <router-link :to="{
+                                name:'user_info',
+                                params:{
+                                    name:post.author.loginname
+                                }
+                            }">
+                                {{post.author.loginname}}&nbsp;
+                            </router-link> 
+                        </li>
+                        <li>• {{post.visit_count}}次浏览&nbsp;</li>
+                        <li>• 来自&nbsp;{{post | tabFormatter}}</li>
+                    </ul>
+                </div>
+                <div class="content">
+                    <div v-html="post.content"></div>
+                </div>
+                <div class="reply-wrapper" v-if="post.replies.length > 0 ">
+                    <div class="num">{{post.replies.length}} 回复</div>
+                    <div v-for="(reply,index) in post.replies" class="reply">
+                        <div class="user-wrapper">
+                            <router-link :to="{
+                                name:'user_info',
+                                params:{
+                                    name:'reply.author.loginname'
+                                }
+                            }">
+                                <img :src="reply.author.avatar_url" alt="">
+                            </router-link>
+                            <span class="name">{{reply.author.loginname}}</span>
+                            <span class="time">{{index+1}}楼• {{reply.create_at | forTimeDate}}</span>
+                        </div>
+                        <p v-html="reply.content"></p>
                     </div>
-                    <p v-html="reply.content"></p>
                 </div>
             </div>
         </div>
@@ -82,8 +84,7 @@ export default {
     .post_content {
         border-radius: 6px;
         margin-right:305px;
-        
-        > .header {
+        .header {
             border-bottom: 2px solid #E5E5E5;
             padding: 10px 20px 15px 20px;
             background: #fff;
@@ -108,7 +109,7 @@ export default {
                 }
             }
         }
-        > .content{
+        .content{
             padding: 20px;
             background: #fff;
             white-space:normal;

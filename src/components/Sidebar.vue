@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="topics">
-            <div class="bar">作者其它主题</div>
+            <div class="bar">作者最近主题</div>
             <ul>
                 <li v-for="(item,index) in userinfo.recent_topics">
                     <router-link :to="{
